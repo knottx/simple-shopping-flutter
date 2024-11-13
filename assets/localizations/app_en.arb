@@ -1,0 +1,23 @@
+{
+    "@@locale": "en",
+    "cartPageAppBarTitle": "Cart",
+    "cartPageCheckout": "Checkout",
+    "cartPageCheckoutSuccessShopAgain": "Shop again",
+    "cartPageCheckoutSuccessMessage": "Thank you for shopping with us!",
+    "cartPageCheckoutSuccessTitle": "Success!",
+    "cartPageEmptyCart": "Empty Cart",
+    "cartPageGoToShopping": "Go to Shopping",
+    "cartPagePromotionDiscount": "Promotion dicsount",
+    "cartPageSubtotal": "Subtotal",
+    "commonAddToCart": "Add to Cart",
+    "commonCancel": "Cancel",
+    "commonOk": "OK",
+    "commonRefresh": "Refresh",
+    "commonUnit": "unit",
+    "shoppingPageTabCart": "Cart",
+    "shoppingPageTabShopping": "Shopping",
+    "errorSomethingWentWrong": "Something went wrong",
+    "errorTitle": "Sorry",
+    "shoppingPageLatestProducts": "Latest Products",
+    "shoppingPageRecommendProduct": "Recommend Product"
+}

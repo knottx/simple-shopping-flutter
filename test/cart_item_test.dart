@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:simple_shopping/app/data/models/cart_item_model.dart';
 import 'package:simple_shopping/app/data/models/product_model.dart';
@@ -37,10 +38,19 @@ void main() {
       expect(cartItemC.discount(), 0.00);
     });
 
-    test('calculates discount correctly', () {
+    test('calculates total correctly', () {
       expect(cartItemA.total(), 580.00);
       expect(cartItemB.total(), 570.00);
       expect(cartItemC.total(), 100.00);
+
+      expect(
+        [
+          cartItemA.total(),
+          cartItemB.total(),
+          cartItemC.total(),
+        ].sum,
+        1250.00,
+      );
     });
 
     test('supports value equality', () {

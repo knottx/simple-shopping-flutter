@@ -158,7 +158,9 @@ class _ShoppingViewState extends State<ShoppingView> {
     final cartQuantity = sessionState.cartQuantity();
     return NavigationBar(
       onDestinationSelected: (index) {
-        if (index == 1) {
+        if (index == 0) {
+          _cubit.loadData();
+        } else if (index == 1) {
           context.push('/cart');
         }
       },

@@ -16,9 +16,14 @@ class AppSnackBar {
             Expanded(
               child: Text(errorMessage),
             ),
-            const Icon(
-              Icons.close,
-              color: Colors.white,
+            GestureDetector(
+              onTap: () {
+                ScaffoldMessenger.of(context).hideCurrentSnackBar();
+              },
+              child: const Icon(
+                Icons.close,
+                color: Colors.white,
+              ),
             ),
           ],
         ),

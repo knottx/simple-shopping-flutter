@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:simple_shopping/app/core/api_client/curl_logger.dart';
 import 'package:simple_shopping/app/core/api_client/handle_exceptions.dart';
+import 'package:simple_shopping/app_config.dart';
 
 class APIClient {
   static final APIClient instance = APIClient._();
@@ -11,7 +12,7 @@ class APIClient {
 
   APIClient._() {
     _dio
-      ..options.baseUrl = 'http://localhost:8080'
+      ..options.baseUrl = AppConfig.baseUrl
       ..options.connectTimeout = const Duration(seconds: 15)
       ..options.receiveTimeout = const Duration(seconds: 15)
       ..options.contentType = Headers.jsonContentType

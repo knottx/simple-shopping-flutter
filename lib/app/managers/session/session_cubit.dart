@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:simple_shopping/app/data/models/app_error_model.dart';
 import 'package:simple_shopping/app/data/models/cart_item_model.dart';
 import 'package:simple_shopping/app/data/models/product_model.dart';
 import 'package:simple_shopping/app/managers/session/session_state.dart';
@@ -53,5 +54,14 @@ class SessionCubit extends Cubit<SessionState> {
 
   void clearCart() {
     emit(state.copyWith(cartItems: []));
+  }
+
+  void applyCoupon(String couponCode) {
+    if (couponCode == 'DISCOUNT100') {
+      emit(state.copyWith(couponCode: couponCode));
+    } else {
+      emit(state.copyWith(couponCode: ''));
+      throw const AppError(message: 'The coupon code is invalid');
+    }
   }
 }

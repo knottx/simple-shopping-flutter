@@ -28,7 +28,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get cartPageGoToShopping => 'Go to Shopping';
 
   @override
-  String get cartPagePromotionDiscount => 'Promotion dicsount';
+  String get cartPagePromotionDiscount => 'Promotion discount';
 
   @override
   String get cartPageSubtotal => 'Subtotal';

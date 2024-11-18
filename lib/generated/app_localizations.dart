@@ -138,7 +138,7 @@ abstract class AppLocalizations {
   /// No description provided for @cartPagePromotionDiscount.
   ///
   /// In en, this message translates to:
-  /// **'Promotion dicsount'**
+  /// **'Promotion discount'**
   String get cartPagePromotionDiscount;
 
   /// No description provided for @cartPageSubtotal.

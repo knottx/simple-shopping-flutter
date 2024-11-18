@@ -67,6 +67,7 @@ class _CartViewState extends State<CartView> {
                   bottomNavigationBar: CartPageBottomNavigationBar(
                     sessionState: sessionState,
                     onTapCheckout: _cubit.checkout,
+                    onApplyCoupon: _cubit.onApplyCoupon,
                   ),
                 ),
                 OverlayLoadingIndicator(state.status.isLoading),
@@ -122,6 +123,7 @@ class _CartViewState extends State<CartView> {
     switch (state.status) {
       case CartPageStatus.initial:
       case CartPageStatus.loading:
+      case CartPageStatus.ready:
       case CartPageStatus.checkoutSuccess:
         break;
 

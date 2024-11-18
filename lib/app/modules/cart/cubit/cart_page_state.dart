@@ -3,6 +3,7 @@ import 'package:equatable/equatable.dart';
 enum CartPageStatus {
   initial,
   loading,
+  ready,
   checkoutSuccess,
   failure,
   ;
@@ -39,6 +40,12 @@ class CartPageState extends Equatable {
   CartPageState loading() {
     return copyWith(
       status: CartPageStatus.loading,
+    );
+  }
+
+  CartPageState ready() {
+    return copyWith(
+      status: CartPageStatus.ready,
     );
   }
 

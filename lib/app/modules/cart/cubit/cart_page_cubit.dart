@@ -46,4 +46,14 @@ class CartPageCubit extends Cubit<CartPageState> {
       emit(state.failure(error));
     }
   }
+
+  void onApplyCoupon(String couponCode) async {
+    try {
+      emit(state.loading());
+      SessionCubit.instance.applyCoupon(couponCode);
+      emit(state.ready());
+    } catch (error) {
+      emit(state.failure(error));
+    }
+  }
 }

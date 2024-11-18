@@ -5,22 +5,26 @@ import 'package:simple_shopping/app/data/models/product_model.dart';
 
 class SessionState extends Equatable {
   final List<CartItem> cartItems;
+  final String couponCode;
 
   const SessionState({
     this.cartItems = const [],
+    this.couponCode = '',
   });
 
   @override
   List<Object?> get props => [
         cartItems,
+        couponCode,
       ];
 
   SessionState copyWith({
     List<CartItem>? cartItems,
-    Object? error,
+    String? couponCode,
   }) {
     return SessionState(
       cartItems: cartItems ?? this.cartItems,
+      couponCode: couponCode ?? this.couponCode,
     );
   }
 
@@ -51,7 +55,12 @@ class SessionState extends Equatable {
     return cartItems.map((e) => e.discount()).sum;
   }
 
+  num couponDiscount() {
+    return couponCode == 'DISCOUNT100' ? -100 : 0;
+  }
+
   num cartTotal() {
-    return cartSubtotal() + cartDiscount();
+    final result = cartSubtotal() + cartDiscount() + couponDiscount();
+    return result > 0 ? result : 0;
   }
 }
